@@ -1,0 +1,195 @@
+/* body {
+  padding: 5px;
+} */
+
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.ant-layout {
+  background: none;
+}
+
+.logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  /* margin: 16px 28px 16px 0; */
+  float: left;
+}
+
+/* .header, .footer {
+  background: rgba(17, 17, 17, 0.5)
+} */
+
+.ant-layout-header,
+.ant-menu {
+  background: rgba(53, 53, 53, 0.274);
+  /* color: white; */
+  /* height: 4em;
+  padding: 1.5em 1em;
+  line-height: 1em; */
+}
+
+.ant-menu {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.58);
+  font-size: 14px;
+  /* color: white; */
+}
+
+.page-wrapper {
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+#nav {
+  float: right;
+}
+
+#nav.ant-menu-horizontal {
+  border-bottom: none;
+}
+
+/* .clock {
+  color: white;
+  position: absolute;
+  left: -2em; */
+/* top: 10px; */
+/* left: 10px; */
+/* } */
+
+#header {
+  /* background: #fff; */
+  /* -webkit-box-shadow: 0 2px 8px #f0f1f2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); */
+  position: relative;
+  z-index: 10;
+  max-width: 100%;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.ant-card-head-title {
+  display: inline;
+  white-space: normal;
+}
+
+.header-lang-button {
+  color: rgba(0, 0, 0, 0.65);
+  background: none;
+  border-color: #d9d9d9;
+  margin-right: 40px;
+  float: right;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.sider {
+  background: rgba(94, 56, 56, 0.5);
+}
+
+.ant-table-thead > tr.ant-table-row-hover > td,
+.ant-table-tbody > tr.ant-table-row-hover > td,
+.ant-table-thead > tr:hover > td,
+.ant-table-tbody > tr:hover > td {
+  background: #d8e6df;
+}
+
+.card {
+  margin: 1em;
+  /* width: 600px; */
+  /* background: none; */
+  color: white;
+  /* text-align: center; */
+  background: rgba(46, 21, 49, 0.7);
+}
+
+/* Usahakan penamaan classname sesuai dengan nama dari AntD agar dapat dimanipulasi isi elemen nya 
+Untuk table, jika diberi nama lain selain ant-table, maka perubahan apapun tidak akan berpengaruh terhadap elemen table
+*/
+/* .ant-table {
+  color: rgb(94, 56, 56);
+} */
+
+.nav-icon {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 1;
+  width: 16px;
+  height: 22px;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    line-height: 1em;
+  }
+}
+
+@media only screen and (max-width: 767.99px) {
+  #header {
+    text-align: center;
+  }
+  .nav-icon {
+    display: block;
+  }
+
+  .search-box {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .search-box {
+    display: none;
+  }
+  /* .clock {
+    display: absolute; */
+  /* top: 200px; */
+  /* left: 1200px; */
+  /* right: -40em;
+    top: 4em;
+    color: grey; */
+  /* } */
+}
+
+@media only screen and (min-width: 768px) {
+  /* .clock {
+    display: relative;
+    /* top: 200px; */
+  /* left: 1200px; */
+  /* right: -110;
+    top: 110;
+    color: whitesmoke;
+  } */
+}
+/* 
+body {
+  font-family: "Spicy Rice", cursive;
+} */
+
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+} */
+
+/* p {
+  font-family: "Poor Story", cursive;
+} */

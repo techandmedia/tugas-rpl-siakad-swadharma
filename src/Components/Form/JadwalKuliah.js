@@ -116,6 +116,8 @@ export default class JadwalKuliah extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.props.tableUpdate)
+
     getDosen(this.props.URL).then(response => {
       this.setState({
         dosen: response.data
@@ -222,6 +224,7 @@ export default class JadwalKuliah extends React.Component {
       statusKelas,
       role
     } = this.state;
+    const { tableUpdate } = this.props;
 
     return (
       <React.Fragment>

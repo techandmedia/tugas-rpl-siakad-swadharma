@@ -12,7 +12,7 @@ export default class JadwalKuliah extends React.Component {
 
   componentDidMount() {
     getJadwalKuliah(this.props.URL).then(response => {
-      console.log("cdM44", response.data[0]);
+      // console.log("cdM44", response.data[0]);
       this.setState({
         jadwalKuliah: response.data.map(jadwal => ({
           key: jadwal.id_jadwal_kuliah,
@@ -27,6 +27,10 @@ export default class JadwalKuliah extends React.Component {
         }))
       });
     });
+  }
+
+  shouldComponentUpdate(){
+    return true
   }
 
   handleChange = (pagination, filters, sorter) => {

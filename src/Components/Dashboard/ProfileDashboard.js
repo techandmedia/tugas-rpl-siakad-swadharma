@@ -1,10 +1,11 @@
 import React from "react";
-import { Row, Tabs } from "antd";
+import { Tabs } from "antd";
 import {
   // DarkCard as Card,
   WhiteJumboCard as JumboCard
 } from "../Basic Component/Card";
 import JadwalKuliah from "../Mahasiswa/Table/JadwalKuliah";
+import ProfileDosen from "../Admin/Table/ProfileDosen";
 
 const TabPane = Tabs.TabPane;
 
@@ -41,13 +42,12 @@ export default function Dashboard(props) {
           Selamat Datang {first_name} {last_name}
           {/* Selamat Datang {props[0].first_name} {props[0].last_name} */}
         </h1>
-        <Tabs onChange={callback} type="card" defaultActiveKey="2">
-          
+        <Tabs onChange={callback} type="card" defaultActiveKey="1">
           <TabPane tab="Profil Dosen" key="1">
-
-            <hr style={{ borderBottom: "none" }} />
+            <ProfileDosen URL={URL}/>
+            {/* <hr style={{ borderBottom: "none" }} /> */}
           </TabPane>
-          
+
           <TabPane tab="Profil Mahasiswa" key="2">
             <JadwalKuliah URL={URL} />
           </TabPane>

@@ -9,9 +9,9 @@ import DashboardProfilUser from "./ProfileDashboard";
 
 export default class MainDashboard extends React.Component {
   state = {
-    // route: "dashboard-main",
+    route: "dashboard-main",
     role: "mahasiswa",
-    route: "dashboard-user-profile",
+    // route: "dashboard-user-profile",
   };
 
   componentDidMount() {
@@ -21,7 +21,7 @@ export default class MainDashboard extends React.Component {
   }
 
   onRouteChange = route => {
-    console.log("22", route);
+    // console.log("22", route);
     if (route === "dashboard-user-profile") {
       this.setState({ route: route });
       // this.setState({
@@ -45,7 +45,7 @@ export default class MainDashboard extends React.Component {
 
     return (
       <Layout>
-        <SideNav badgename={badgename} onRouteChange={this.onRouteChange} />
+        <SideNav role={role} badgename={badgename} onRouteChange={this.onRouteChange} />
         <Layout>
           <Content style={{ justifyContent: "center", alignItems: "center" }}>
             {route === "dashboard-user-profile" ? (

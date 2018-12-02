@@ -23,27 +23,27 @@ const MainDashboard = Loadable({
   loading: Loading
 });
 
-class App extends React.Component {
+class App extends React.Component {  
   state = {
-    // isSignedIn: true,
-    // route: "dashboard",
-    // badgename: "Andri",
-    // sidebar: "Mahasiswa",
-    isSignedIn: false,
-    route: "home",
-    badgename: "Guest",
-    sidebar: null,
+    isSignedIn: true,
+    route: "dashboard",
+    badgename: "Andri",
+    sidebar: "Mahasiswa",
+    // isSignedIn: false,
+    // route: "home",
+    // badgename: "Guest",
+    // sidebar: null,
     users: {
-      // first_name: "Eko",
-      // last_name: "Andri",
-      // email: "eko.andri@icloud.com",
-      // role: "Mahasiswa",
-      // notifications: 4
-      first_name: null,
-      last_name: null,
-      email: null,
-      role: null,
-      notifications: null
+      first_name: "Eko",
+      last_name: "Andri",
+      email: "eko.andri@icloud.com",
+      role: "Mahasiswa",
+      notifications: 4
+      // first_name: null,
+      // last_name: null,
+      // email: null,
+      // role: null,
+      // notifications: null
     }
   };
 

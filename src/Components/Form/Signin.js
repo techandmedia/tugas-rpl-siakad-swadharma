@@ -19,9 +19,9 @@ class SignIn extends React.Component {
     };
   }
 
-  componentDidMount() {
-    // console.log(values);
-  }
+  // componentDidMount() {
+  //   console.log(values);
+  // }
 
   handleSubmit = e => {
     e.preventDefault();
@@ -126,9 +126,9 @@ class SignIn extends React.Component {
                 Log in
               </Button>
               Or{" "}
-              <a onClick={() => onRouteChange("register")}>
+              <span onClick={() => onRouteChange("register")}>
                 Register now!
-              </a>
+              </span>
             </FormItem>
           </Form>
         </Card>

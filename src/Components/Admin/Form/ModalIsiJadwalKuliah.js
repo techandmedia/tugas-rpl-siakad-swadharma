@@ -3,7 +3,14 @@ import { Modal, Button } from "antd";
 import FormIsiJadwalKuliah from "./FormIsiJadwalKuliah";
 
 export default function ModalJadwalKuliah(props) {
-  const { selectedDate, visible, loading, handleOk, handleCancel } = props;
+  const {
+    selectedDate,
+    visible,
+    loading,
+    handleOk,
+    handleCancel,
+    componentUpdate
+  } = props;
 
   const Title = `Form Jadwal Kuliah untuk tanggal ${selectedDate}`;
 
@@ -30,7 +37,7 @@ export default function ModalJadwalKuliah(props) {
         </Button>
       ]}
     >
-      <FormIsiJadwalKuliah {...props} />
+      <FormIsiJadwalKuliah {...props} componentUpdate={componentUpdate}/>
     </Modal>
   );
 }

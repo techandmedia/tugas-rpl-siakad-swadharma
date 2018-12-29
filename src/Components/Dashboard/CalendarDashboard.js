@@ -20,7 +20,7 @@ function callback(key) {
 // console.log('URL', props[0].URL)
 // penggunaan nya dengan cara props[array dengan index 0].nama props nya
 
-// cara ke 2, dengan menggunakan deconstrcution props dari nama nya
+// cara ke 2, dengan menggunakan deconstruction props dari nama nya
 // cara ini lebih mudah dalam penggunaan nya pada saat memanggil
 // cukup dengan nama props.nama field, tidak perlu tambahan index
 // dan lebih mudah dideconstruct
@@ -28,11 +28,11 @@ function callback(key) {
 export default class Dashboard extends React.Component {
   state = {
     tableUpdate: null
-  }
+  };
 
   render() {
-    const { URL, first_name, last_name } = this.props;
-    const { tableUpdate } = this.state
+    const { URL, first_name, last_name, componentUpdate } = this.props;
+    const { tableUpdate } = this.state;
 
     return (
       <React.Fragment>
@@ -51,13 +51,21 @@ export default class Dashboard extends React.Component {
           <Tabs onChange={callback} type="card">
             <TabPane tab="Isi Jadwal Kuliah" key="1">
               {}
-              <KalenderKuliah URL={URL} tableUpdate={tableUpdate} />
+              <KalenderKuliah
+                URL={URL}
+                tableUpdate={tableUpdate}
+                componentUpdate={componentUpdate}
+              />
               {/* <JadwalKuliah URL={URL}/> */}
 
               <hr style={{ borderBottom: "none" }} />
             </TabPane>
             <TabPane tab="Lihat Jadwal Kuliah" key="2">
-              <JadwalKuliah URL={URL} tableUpdate={tableUpdate}/>
+              <JadwalKuliah
+                URL={URL}
+                tableUpdate={tableUpdate}
+                componentUpdate={componentUpdate}
+              />
             </TabPane>
             <TabPane tab="Tab Next" key="3">
               <p>

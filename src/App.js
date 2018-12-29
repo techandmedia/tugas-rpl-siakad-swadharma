@@ -26,6 +26,7 @@ const MainDashboard = Loadable({
 class App extends React.Component {  
   state = {
     isSignedIn: true,
+    componentUpdate: false,
     route: "dashboard",
     badgename: "Andri",
     sidebar: "Mahasiswa",
@@ -97,7 +98,7 @@ class App extends React.Component {
     } = userConfig;
     const URL = process.env.NODE_ENV === "production" ? prodURL : devURL;
 
-    const { badgename, isSignedIn, route } = this.state;
+    const { badgename, isSignedIn, route, componentUpdate } = this.state;
     const { onRouteChange, loadUser } = this;
     const {
       first_name,
@@ -133,6 +134,7 @@ class App extends React.Component {
               badgename={badgename}
               onRouteChange={onRouteChange}
               {...this.state.users}
+              componentUpdate={componentUpdate}
             />
           ) : (
             <MainContent

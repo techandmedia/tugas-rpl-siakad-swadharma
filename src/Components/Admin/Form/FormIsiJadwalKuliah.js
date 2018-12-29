@@ -53,6 +53,7 @@ class FormJadwal extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.props)
     this.setState({
       dosen: this.props.dosen.map(data => ({
         id: data.id_dosen,
@@ -134,7 +135,6 @@ class FormJadwal extends React.Component {
     });
 
     // role
-    // console.log(this.props.role);
     this.setState({
       role: this.props.role.map(data => ({
         id: data.id_role,

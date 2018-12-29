@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table, Input, InputNumber, Popconfirm, Form } from 'antd';
-import { getDosen } from '../../data/GetData'
+// import { getDosen } from '../../data/GetData'
 
 const data = [];
 for (let i = 0; i < 100; i++) {
@@ -99,24 +99,23 @@ export default class EditableTable extends React.Component {
                 <span>
                   <EditableContext.Consumer>
                     {form => (
-                      <a
-                        // href="javascript:;"
+                      <span className="custom-button"
                         onClick={() => this.save(form, record.key)}
                         style={{ marginRight: 8 }}
                       >
                         Save
-                      </a>
+                      </span>
                     )}
                   </EditableContext.Consumer>
                   <Popconfirm
                     title="Sure to cancel?"
                     onConfirm={() => this.cancel(record.key)}
                   >
-                    <a>Cancel</a>
+                    <span className="custom-button">Cancel</span>
                   </Popconfirm>
                 </span>
               ) : (
-                <a onClick={() => this.edit(record.key)}>Edit</a>
+                <span className="custom-button" onClick={() => this.edit(record.key)}>Edit</span>
               )}
             </div>
           );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, Button } from "antd";
 import { getJadwalKuliah } from "../../data/GetData";
-import moment from '../../data/Moment'
+import moment from "../../data/Moment";
 
 export default class JadwalKuliah extends React.Component {
   state = {
@@ -11,6 +11,7 @@ export default class JadwalKuliah extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.props)
     getJadwalKuliah(this.props.URL).then(response => {
       // console.log("cdM44", response.data[0]);
       this.setState({
@@ -27,10 +28,6 @@ export default class JadwalKuliah extends React.Component {
         }))
       });
     });
-  }
-
-  shouldComponentUpdate(){
-    return true
   }
 
   handleChange = (pagination, filters, sorter) => {
@@ -115,7 +112,7 @@ export default class JadwalKuliah extends React.Component {
         title: "Jurusan",
         dataIndex: "jurusan",
         key: "jurusan"
-      },
+      }
     ];
     return (
       <div>
@@ -135,5 +132,26 @@ export default class JadwalKuliah extends React.Component {
         />
       </div>
     );
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!this.props.componentUpdate === prevProps.componentUpdate) {
+      getJadwalKuliah(this.props.URL).then(response => {
+        // console.log("cdM44", response.data[0]);
+        this.setState({
+          jadwalKuliah: response.data.map(jadwal => ({
+            key: jadwal.id_jadwal_kuliah,
+            tanggal: moment(jadwal.tanggal).format("DD MMMM YYYY"),
+            dosen: jadwal.nama_dosen,
+            jurusan: jadwal.nama_jurusan,
+            kelas: jadwal.nama_kelas,
+            mata_kuliah: jadwal.nama_mata_kuliah,
+            no_ruangan: jadwal.no_ruangan,
+            status_kelas: jadwal.status_kelas,
+            jam_kelas: `${jadwal.jam_kuliah_awal}-${jadwal.jam_kuliah_akhir}`
+          }))
+        });
+      });
+    }
   }
 }

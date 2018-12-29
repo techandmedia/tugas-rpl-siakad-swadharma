@@ -93,6 +93,11 @@
   margin-left: 16px;
 }
 
+.custom-button {
+  cursor: pointer;
+  color: blue;
+}
+
 .sider {
   background: rgba(94, 56, 56, 0.5);
 }

@@ -49,7 +49,7 @@ class SignIn extends React.Component {
               this.props.onRouteChange("dashboard");
             } else {
               alert(
-                "Ada sesuatu yang salah dengan diri Anda :). Just Kidding. Mungkin internnet Anda sedang error. Coba lagi ya!"
+                "Ada sesuatu yang salah dengan diri Anda :). Just Kidding. Mungkin internet Anda sedang error. Coba lagi ya!"
               );
             }
           }

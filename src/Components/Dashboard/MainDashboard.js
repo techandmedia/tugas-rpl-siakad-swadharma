@@ -10,7 +10,7 @@ import DashboardProfilUser from "./ProfileDashboard";
 export default class MainDashboard extends React.Component {
   state = {
     route: "dashboard-main",
-    role: "mahasiswa",
+    role: "mahasiswa"
     // route: "dashboard-user-profile",
   };
 
@@ -40,20 +40,32 @@ export default class MainDashboard extends React.Component {
 
   render() {
     const { Content } = Layout;
-    const { URL, badgename } = this.props;
+    const { URL, badgename, componentUpdate } = this.props;
     const { role, route } = this.state;
 
     return (
       <Layout>
-        <SideNav role={role} badgename={badgename} onRouteChange={this.onRouteChange} />
+        <SideNav
+          role={role}
+          badgename={badgename}
+          onRouteChange={this.onRouteChange}
+        />
         <Layout>
           <Content style={{ justifyContent: "center", alignItems: "center" }}>
             {route === "dashboard-user-profile" ? (
               <DashboardProfilUser />
             ) : route === "dashboard-main" ? (
-              <DashboardCalendar {...this.props.users} URL={URL} />
+              <DashboardCalendar
+                {...this.props.users}
+                URL={URL}
+                componentUpdate={componentUpdate}
+              />
             ) : (
-              <DashboardCalendar {...this.props.users} URL={URL} />
+              <DashboardCalendar
+                {...this.props.users}
+                URL={URL}
+                componentUpdate={componentUpdate}
+              />
             )}
           </Content>
           <Footer />

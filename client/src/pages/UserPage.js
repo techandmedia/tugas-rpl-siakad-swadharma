@@ -1,50 +1,38 @@
 import React, { useEffect, useState } from "react";
+import DosenPage from "./Dosen/Dosen";
+import JadwalKuliah from "./Mahasiswa/JadwalKuliah";
 
-export default function UserPage() {
-  const listMenu = [
-    { route: "fo-reception", name: "Front Office Reception", logo: "SampleLogo" },
-    { route: "fo-cashier", name: "Front Office Cashier", logo: "SampleLogo" },
-    { route: "sales-marketing", name: "Sales Marketing", logo: "SampleLogo" },
+export default function UserPage(props) {
+  console.log(props);
+  const userRoute = props.mainRoute;
+  const [component, setComponent] = useState(null);
+
+  const Component = [
     {
-      route: "tel-operator",
-      name: "Telephone Operator",
-      logo: "SampleLogo"
+      route: "student",
+      component: <DosenPage />
     },
     {
-      route: "housekeeping",
-      name: "Housekeeping",
-      // component: (
-      //   <Housekeeping
-      //     setDefaultIconColor={setDefaultIconColor}
-      //     setScreenTitle={setScreenTitle}
-      //   />
-      // ),
-      logo: "SampleLogo"
+      route: "teacher",
+      component: <DosenPage />
     },
-    { route: "pos", name: "Point of Sales", logo: "SampleLogo" },
-    { route: "banquet", name: "Banquet", logo: "SampleLogo" },
-    { route: "restaurant", name: "Restaurant", logo: "SampleLogo" },
-    { route: "acc-receive", name: "Accounts Receivable", logo: "SampleLogo" },
-    { route: "purchasing", name: "Purchasing", logo: "SampleLogo" },
-    { route: "inventory", name: "Inventory", logo: "SampleLogo" },
-    { route: "acc-payable", name: "Accounts Payable", logo: "SampleLogo" },
-    { route: "gen-cashier", name: "General Cashier", logo: "SampleLogo" },
-    { route: "gen-ledger", name: "General Ledger", logo: "SampleLogo" },
-    { route: "fix-assets", name: "Fixed Assets", logo: "SampleLogo" },
-    { route: "engineering", name: "Engineering", logo: "SampleLogo" }
+    {
+      route: "jadwal",
+      component: <JadwalKuliah />
+    }
   ];
 
-  // useEffect(() => {
-  //   setComponent(getRoute());
-  // }, []);
+  useEffect(() => {
+    setComponent(getRoute());
+  },[]);
 
-  // function getRoute() {
-  //   for (let i = 0; i < listMenu.length; i++) {
-  //     if (route === listMenu[i].route) {
-  //       return listMenu[i].component;
-  //     }
-  //   }
-  // }
+  function getRoute() {
+    for (let i = 0; i < Component.length; i++) {
+      if (userRoute === Component[i].route) {
+        return Component[i].component;
+      }
+    }
+  }
 
-  return <h1>UserPage</h1>;
+  return <React.Fragment>{component}</React.Fragment>;
 }

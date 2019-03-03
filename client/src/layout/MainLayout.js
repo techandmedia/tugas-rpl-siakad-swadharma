@@ -5,7 +5,7 @@ import "./ant-style.css";
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function MainLayout(props) {
-  const siderHide = false;
+  
   return (
     <Layout>
       <Header id="header-1" className="header-1">
@@ -42,27 +42,27 @@ export default function MainLayout(props) {
         >
           {props.children}
         </Content>
-
-        <Footer
-          style={{
-            position: "absolute",
-            bottom: 0,
-            padding: 10,
-            left: "50%",
-            transform: "translateX(-50%)"
-          }}
-        >
-          <a
-            href="https://subarnanto.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "grey" }}
-          >
-            Created by Eko Andri Subarnanto <br />
-            <span>Front End Web Developer @ VHP</span>
-          </a>
-        </Footer>
       </Layout>
+
+      <Footer
+        style={{
+          // position: "absolute",
+          // bottom: 0,
+          padding: 10,
+          // left: "50%",
+          // transform: "translateX(-50%)"
+        }}
+      >
+        <a
+          href="https://subarnanto.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "grey" }}
+        >
+          Created by Eko Andri Subarnanto <br />
+          <span>Front End Web Developer @ VHP</span>
+        </a>
+      </Footer>
     </Layout>
   );
 }

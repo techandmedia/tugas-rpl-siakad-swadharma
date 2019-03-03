@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, Icon } from "antd";
 
 export default function Sider() {
-  const [current] = useState(1);
+  const [current] = useState("Logo");
 
   const mainMenuList = [
     {
@@ -53,14 +53,15 @@ export default function Sider() {
   return (
     <React.Fragment>
       <Menu
-      mode="inline"
-      defaultSelectedKeys={[current]}
-      theme="light"
-      style={{ height: '100%', borderRight: 0 }}
+        mode="inline"
+        defaultSelectedKeys={[current]}
+        theme="light"
+        style={{ height: "100%", borderRight: 0 }}
       >
         {mainMenuList.map(menu => {
           return (
             <Menu.SubMenu
+              key={menu.name}
               className={menu.class}
               title={
                 <span className="submenu-title-wrapper">

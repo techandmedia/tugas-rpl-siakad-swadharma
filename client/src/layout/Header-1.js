@@ -1,30 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { Menu, Icon } from "antd";
 
-export default function Header_1() {
-  const [current] = useState(1);
+export default function Header_1(props) {
+  // const [current] = useState("Logo");
 
   const mainMenuList = [
     {
-      key: 1,
-      name: "Logo",
-      class: `header-1-logo`,
-      logo: "home"
-    },
-    {
-      key: 2,
+      route: "quick",
       name: "Quick Access",
       class: `header-1 swadharma`,
       logo: "setting"
     },
     {
-      key: 3,
+      route: "site",
       name: "Site Map",
       class: `header-1 quick`,
       logo: "contacts"
     },
     {
-      key: 4,
+      route: "study",
       name: "Study in Swadharma",
       class: `header-1 site-map`,
       logo: "codepen"
@@ -33,34 +27,46 @@ export default function Header_1() {
 
   const menuQuickAccess = [
     {
-      key: 1,
+      route: "login",
       name: "Login"
     },
     {
-      key: 2,
+      route: "teacher",
       name: "Teacher"
     },
     {
-      key: 3,
+      route: "student",
       name: "Student"
     }
   ];
 
   const renderQuickAccess = menuQuickAccess.map(item => {
-    return <Menu.Item key={item.key}>{item.name}</Menu.Item>;
+    return <Menu.Item key={item.route}>{item.name}</Menu.Item>;
   });
+
+  function onMenuClick(e) {
+    console.log(e.key, props);
+    props.setMainRoute(e.key);
+  }
 
   return (
     <React.Fragment>
       <Menu
         theme="light"
-        // onClick={setBackgroundColor}
-        selectedKeys={[current]}
+        onClick={e => onMenuClick(e)}
+        // selectedKeys={[current]}
         mode="horizontal"
       >
+        <Menu.Item key="home" className="header-1-logo">
+          <Icon type="home" />
+          Logo123
+        </Menu.Item>
+
         {mainMenuList.map(menu => {
           return (
+            // Sub Menu tidak bisa onClick, harus di Menu.Item
             <Menu.SubMenu
+              key={menu.route}
               className={menu.class}
               title={
                 <span className="submenu-title-wrapper">
@@ -69,7 +75,7 @@ export default function Header_1() {
                 </span>
               }
             >
-              {menu.key === 2 ? renderQuickAccess : null}
+              {menu.route === "quick" ? renderQuickAccess : null}
             </Menu.SubMenu>
           );
         })}

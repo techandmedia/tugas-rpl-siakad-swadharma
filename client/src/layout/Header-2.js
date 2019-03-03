@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Menu, Icon } from "antd";
+import { Menu } from "antd";
 
 export default function Header_2() {
-  const [current] = useState(1);
+  const [current] = useState("Home");
   const menuList = [
     {
       key: 1,

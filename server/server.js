@@ -10,6 +10,7 @@ const postRoute = require("./routes/siakad-route-post");
 const signinRoute = require("./routes/siakad-route-signin-register");
 
 const dosenRoute = require("./routes/dosen/dosen-route");
+const mahasiswaRoute = require("./routes/mahasiswa/mahasiswa-route");
 
 server.use(cors());
 server.use(compression());
@@ -27,3 +28,4 @@ server.use(postRoute);
 server.use(signinRoute);
 
 server.use(dosenRoute);
+server.use(mahasiswaRoute);

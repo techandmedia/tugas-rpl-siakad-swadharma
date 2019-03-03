@@ -32,11 +32,15 @@ export default function Header_1(props) {
     },
     {
       route: "teacher",
-      name: "Teacher"
+      name: "Daftar Dosen"
     },
     {
       route: "student",
-      name: "Student"
+      name: "Daftar Mahasiswa"
+    },
+    {
+      route: "status",
+      name: "Status Mahasiswa"
     }
   ];
 
@@ -45,7 +49,8 @@ export default function Header_1(props) {
   });
 
   function onMenuClick(e) {
-    console.log(e.key, props);
+    console.log(e.key);
+    console.log(props);
     props.setMainRoute(e.key);
   }
 

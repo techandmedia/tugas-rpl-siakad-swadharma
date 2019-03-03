@@ -29,15 +29,16 @@ exports.getStatusMengajar = router.get("/api/status_mengajar", (req, res) => {
   );
 });
 
-exports.getStatusDosen = router.get("/api/status_dosen", (req, res) => {
-  mySQL.query(
-    "SELECT d.nama_dosen AS nama_dosen, sm.nama_status AS mengajar, sp.nama_status AS pegawai FROM status_dosen sd INNER JOIN dosen d ON d.id_dosen = sd.id_dosen INNER JOIN status_mengajar sm ON sm.id_status_mengajar = sd.id_status_mengajar INNER JOIN status_pegawai sp ON sp.id_status_pegawai = sd.id_status_pegawai ORDER BY d.nama_dosen ASC",
-    (err, results) => {
-      console.log(results);
-      if (err) console.log(err);
-      res.send(JSON.stringify(results));
-    }
-  );
+// === Status Dosen =========================================================
+const statusDosenAPI =
+  "SELECT d.nama_dosen AS nama_dosen, sm.nama_status AS mengajar, sp.nama_status AS pegawai FROM status_dosen sd INNER JOIN dosen d ON d.id_dosen = sd.id_dosen INNER JOIN status_mengajar sm ON sm.id_status_mengajar = sd.id_status_mengajar INNER JOIN status_pegawai sp ON sp.id_status_pegawai = sd.id_status_pegawai ORDER BY d.nama_dosen ASC";
+
+  exports.getStatusDosen = router.get("/api/status_dosen", (req, res) => {
+  mySQL.query(statusDosenAPI, (err, results) => {
+    console.log(results);
+    if (err) console.log(err);
+    res.send(JSON.stringify(results));
+  });
 });
 
 module.exports = router;

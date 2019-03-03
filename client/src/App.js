@@ -28,6 +28,10 @@ function App() {
     {
       route: "student",
       component: <UserPage mainRoute={mainRoute} />
+    },
+    {
+      route: "status",
+      component: <UserPage mainRoute={mainRoute} />
     }
     // {
     //   route: mainRoute === "teacher" || mainRoute === "student",

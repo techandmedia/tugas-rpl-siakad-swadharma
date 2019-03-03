@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import DosenPage from "./Dosen/Dosen";
+import MahasiswaPage from "./Mahasiswa/DaftarMahasiswa/Mahasiswa";
+import StatusMahasiswa from "./Mahasiswa/StatusMahasiswa/StatusMahasiswa";
 import JadwalKuliah from "./Mahasiswa/JadwalKuliah";
 
 export default function UserPage(props) {
-  console.log(props);
   const userRoute = props.mainRoute;
+  console.log(userRoute);
   const [component, setComponent] = useState(null);
 
   const Component = [
     {
       route: "student",
-      component: <DosenPage />
+      component: <MahasiswaPage />
+    },
+    {
+      route: "status",
+      component: <StatusMahasiswa />
     },
     {
       route: "teacher",
@@ -24,7 +30,7 @@ export default function UserPage(props) {
 
   useEffect(() => {
     setComponent(getRoute());
-  },[]);
+  }, [userRoute]);
 
   function getRoute() {
     for (let i = 0; i < Component.length; i++) {

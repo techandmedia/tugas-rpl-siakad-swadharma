@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Table } from "antd";
+import React from "react";
+// import { Table } from "antd";
 // import { getStatusDosen } from "../../utils/api";
-import columns from "./column-jadwal";
+// import columns from "./column-jadwal";
 
 
 export default function JadwalKuliah() {

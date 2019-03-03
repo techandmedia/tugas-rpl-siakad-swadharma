@@ -39,7 +39,7 @@ const columns = [
     key: "no"
   },
   {
-    title: "Name",
+    title: "Nama Dosen",
     dataIndex: "name",
     key: "name",
     render: text => <span>{text}</span>

@@ -8,6 +8,8 @@ import Homepage from "./pages/Homepage";
 import LoginPage from "./pages/Login";
 import UserPage from "./pages/UserPage";
 
+import "./utils/style.css";
+
 function App() {
   const [mainRoute, setMainRoute] = useState("home");
   const [component, setComponent] = useState(null);

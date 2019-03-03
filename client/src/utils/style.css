@@ -1,0 +1,10 @@
+.button-mahasiswa {
+  margin-left: 50px;
+  color: white;
+  background-color: mediumvioletred;
+}
+
+.button-mahasiswa:hover {
+  color: mediumvioletred;
+  background-color: white;
+}

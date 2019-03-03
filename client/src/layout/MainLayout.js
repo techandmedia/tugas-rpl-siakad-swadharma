@@ -5,7 +5,6 @@ import "./ant-style.css";
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function MainLayout(props) {
-  
   return (
     <Layout>
       <Header id="header-1" className="header-1">
@@ -48,7 +47,7 @@ export default function MainLayout(props) {
         style={{
           // position: "absolute",
           // bottom: 0,
-          padding: 10,
+          padding: 10
           // left: "50%",
           // transform: "translateX(-50%)"
         }}

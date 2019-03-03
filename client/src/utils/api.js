@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import axios from "axios";
 import config from "./config";
 
@@ -6,22 +7,22 @@ const url =
     ? config.PRODUCTION_URL
     : config.DEVELOPMENT_URL;
 
-function getData(api) {
-  return axios.get(url + api).then(response => response.data);
+function useAxios(api) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  function getData() {
+    return axios.get(url + api).then(response => {
+      return response.data;
+    });
+  }
+
+  useEffect(() => {
+    getData().then(response => setData(response));
+    setLoading(false);
+  }, []);
+
+  return { data, loading };
 }
 
-export function getDataDosen(query) {
-  return getData(query);
-}
-
-export function getStatusPegawai(query) {
-  return getData(query);
-}
-
-export function getStatusMengajar(query) {
-  return getData(query);
-}
-
-export function getStatusDosen(query) {
-  return getData(query);
-}
+export default useAxios;

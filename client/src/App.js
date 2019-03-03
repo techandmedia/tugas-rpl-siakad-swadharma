@@ -22,21 +22,14 @@ function App() {
       component: <LoginPage />
     },
     {
-      route: "teacher",
-      component: <UserPage mainRoute={mainRoute} />
-    },
-    {
-      route: "student",
-      component: <UserPage mainRoute={mainRoute} />
-    },
-    {
-      route: "status",
+      route:
+        mainRoute === "teacher" ||
+        mainRoute === "student" ||
+        mainRoute === "status"
+          ? mainRoute
+          : null,
       component: <UserPage mainRoute={mainRoute} />
     }
-    // {
-    //   route: mainRoute === "teacher" || mainRoute === "student",
-    //   component: <UserPage mainRoute={mainRoute} />
-    // }
   ];
 
   useEffect(() => {

@@ -4,11 +4,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-less": "^1.0.1",
     "antd": "^3.13.6",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.11.0",
     "express": "^4.16.4",
+    "less": "^3.9.0",
+    "less-vars-to-js": "^1.3.0",
     "moment": "^2.24.0",
     "next": "^8.0.3",
     "react": "^16.8.3",
@@ -18,19 +20,11 @@
   },
   "scripts": {
     "eject": "react-scripts eject",
+    "next": "next",
     "dev": "nodemon server.js",
     "ssr-build": "next build",
     "ssr-start": "set NODE_ENV=production && nodemon server.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
     "nodemon": "^1.18.10"
   }

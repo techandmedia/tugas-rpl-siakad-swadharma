@@ -4,7 +4,7 @@ import useAxios from "../../utils/api";
 import columns from "./column-dosen";
 
 export default function DosenList() {
-  const { data, loading } = useAxios("status_dosen");
+  const [data, loading] = useAxios("status_dosen");
   const [daftarStatusDosen, setDaftarStatus] = useState([]);
 
   useEffect(() => {

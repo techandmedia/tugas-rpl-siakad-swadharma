@@ -22,7 +22,7 @@ function useAxios(api) {
     setLoading(false);
   }, []);
 
-  return { data, loading };
+  return [data, loading];
 }
 
 export default useAxios;

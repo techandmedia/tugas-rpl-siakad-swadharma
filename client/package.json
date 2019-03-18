@@ -4,15 +4,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "antd": "^3.13.6",
     "axios": "^0.18.0",
     "babel-plugin-import": "^1.11.0",
-    "customize-cra": "^0.2.12",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
+    "express": "^4.16.4",
     "moment": "^2.24.0",
+    "next": "^8.0.3",
     "react": "^16.8.3",
-    "react-app-rewired": "^2.1.0",
     "react-dom": "^16.8.3",
     "react-scripts": "^2.1.5",
     "recharts": "^1.5.0"
@@ -21,7 +20,10 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "nodemon server.js",
+    "ssr-build": "next build",
+    "ssr-start": "set NODE_ENV=production && nodemon server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,5 +33,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }

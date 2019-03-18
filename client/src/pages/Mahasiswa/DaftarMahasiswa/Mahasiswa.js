@@ -4,8 +4,15 @@ import { Table, Button, Row, Col } from "antd";
 import useAxios from "../../../utils/api";
 import columns from "./column-mahasiswa";
 
+const data1 = [
+  { name: "Group A", value: 800 },
+  { name: "Group B", value: 300 },
+  { name: "Group C", value: 300 },
+  { name: "Group D", value: 200 }
+];
+
 export default function MahasiswaList() {
-  const { data, loading } = useAxios("mahasiswa");
+  const [data, loading] = useAxios("mahasiswa");
   const [daftarMahasiswa, setDaftarMahasiswa] = useState([]);
   const [tampilanDaftar, setTampilanDaftar] = useState(true);
   const [tampilanStatus, setTampilanStatus] = useState(false);

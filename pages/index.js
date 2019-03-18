@@ -14,7 +14,7 @@ const Option = Select.Option;
 
 export default function App() {
   return (
-    <Layout>
+    <Layout title="Siakad Swadharma">
       <Form layout="horizontal">
         <FormItem
           label="Input Number"

@@ -45,26 +45,35 @@ export default function Header_1(props) {
   ];
 
   const renderQuickAccess = menuQuickAccess.map(item => {
-    return <Menu.Item key={item.route}>{item.name}</Menu.Item>;
+    return (
+      <Menu.Item key={item.route}>
+        <Link href={item.route}>
+          <a>{item.name}</a>
+        </Link>
+      </Menu.Item>
+    );
   });
 
   function onMenuClick(e) {
     console.log(e.key);
     console.log(props);
-    props.setMainRoute(e.key);
+    // props.setMainRoute(e.key);
   }
 
   return (
     <React.Fragment>
       <Menu
         theme="light"
-        onClick={e => onMenuClick(e)}
         // selectedKeys={[current]}
         mode="horizontal"
       >
         <Menu.Item key="home" className="header-1-logo">
-          <Icon type="home" />
-          Logo123
+          <Link href="/">
+            <a>
+              <Icon type="home" />
+              Logo123
+            </a>
+          </Link>
         </Menu.Item>
 
         {mainMenuList.map(menu => {

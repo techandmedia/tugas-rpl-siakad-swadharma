@@ -10,15 +10,16 @@ import "./ant-style.less";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-export default function MainLayout(props, { title = "Siakad Swadharma" }) {
-  // useEffect(() => {
-  // });
-  
-  console.log("rendering");
+export default function MainLayout(props) {
+  useEffect(() => {
+    console.log(props);
+    console.log("rendering");
+  });
+
   return (
     <div>
       <Head>
-        <title>{title}</title>
+        <title>{props.title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>

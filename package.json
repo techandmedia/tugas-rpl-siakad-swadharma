@@ -21,7 +21,7 @@
   "scripts": {
     "eject": "react-scripts eject",
     "next": "next",
-    "dev": "nodemon server.js",
+    "dev": "nodemon server/index.js",
     "ssr-build": "next build",
     "ssr-start": "set NODE_ENV=production && nodemon server.js"
   },

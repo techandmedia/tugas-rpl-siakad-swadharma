@@ -9,16 +9,15 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
-  server.get("/login", (req, res) => {
-    return app.render(req, res, "/login/Login", req.query);
-  });
+  // server.get("/login", (req, res) => {
+  //   return app.render(req, res, "/Login", req.query);
+  // });
 
-  server.get("/b", (req, res) => {
-    return app.render(req, res, "/b", req.query);
-  });
-
-  server.get("/posts/:id", (req, res) => {
-    return app.render(req, res, "/posts", { id: req.params.id });
+  server.get("/:id", (req, res) => {
+    console.log(req.params.id);
+    const actualPage = "/";
+    const queryParams = { route: req.params.id };
+    app.render(req, res, actualPage, queryParams);
   });
 
   server.get("*", (req, res) => {

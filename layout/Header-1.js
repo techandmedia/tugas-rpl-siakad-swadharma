@@ -27,28 +27,32 @@ export default function Header_1(props) {
 
   const menuQuickAccess = [
     {
-      route: "login",
+      id: "login",
       name: "Login"
     },
     {
-      route: "teacher",
+      id: "register",
+      name: "Register"
+    },
+    {
+      id: "teacher",
       name: "Daftar Dosen"
     },
     {
-      route: "student",
+      id: "student",
       name: "Daftar Mahasiswa"
     },
     {
-      route: "status",
+      id: "status",
       name: "Status Mahasiswa"
     }
   ];
 
-  const renderQuickAccess = menuQuickAccess.map(item => {
+  const renderQuickAccess = menuQuickAccess.map(route => {
     return (
-      <Menu.Item key={item.route}>
-        <Link href={item.route}>
-          <a>{item.name}</a>
+      <Menu.Item key={route.id}>
+        <Link href={route.id}>
+          <a>{route.name}</a>
         </Link>
       </Menu.Item>
     );

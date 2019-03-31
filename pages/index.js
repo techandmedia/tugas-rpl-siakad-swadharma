@@ -3,10 +3,10 @@ import Layout from "../layout/Layout";
 import Home from "./home/Home";
 import Login from "./users/Login";
 import Register from "./users/Register";
-import MahasiswaPage from "./mahasiswa/DaftarMahasiswa/Mahasiswa";
+import MahasiswaPage from "./mahasiswa/NilaiMahasiswa/NilaiMahasiswa";
 import StatusMahasiswa from "./mahasiswa/StatusMahasiswa/StatusMahasiswa";
 import Dosen from "./Dosen/Dosen";
-import IsiDataNilai from './admin/IsiDataNilai'
+import IsiDataNilai from "./admin/IsiDataNilai";
 
 const clientRoute = [
   {

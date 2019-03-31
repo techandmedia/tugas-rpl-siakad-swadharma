@@ -11,6 +11,7 @@ const signinRoute = require("./routes/siakad-route-signin-register");
 
 const dosenRoute = require("./routes/dosen/dosen-route");
 const mahasiswaRoute = require("./routes/mahasiswa/mahasiswa-route");
+const nilaiRoute = require("./routes/nilai-mahasiswa/nilai");
 
 server.use(cors());
 server.use(compression());
@@ -29,3 +30,4 @@ server.use(signinRoute);
 
 server.use(dosenRoute);
 server.use(mahasiswaRoute);
+server.use(nilaiRoute);

@@ -44,7 +44,7 @@ export default function Header_1(props) {
     },
     {
       id: "student",
-      name: "Daftar Mahasiswa"
+      name: "Halaman Mahasiswa"
     },
     {
       id: "status",
@@ -79,7 +79,7 @@ export default function Header_1(props) {
           <Link href="/">
             <a>
               <Icon type="home" />
-              Logo123
+              STMIK Swadharma
             </a>
           </Link>
         </Menu.Item>

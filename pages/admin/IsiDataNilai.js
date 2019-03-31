@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Cascader, Input, Button, Row, Col } from "antd";
 import getAllData from "./getAllData";
+import { postNilai } from "../../utils/postData";
 
 function IsiDataNilai(props) {
   const data = getAllData();
@@ -10,26 +11,24 @@ function IsiDataNilai(props) {
 
   useEffect(() => {
     if (data !== undefined) {
-      console.log(data);
+      // console.log(data);
       setDaftarMahasiswa(data.daftarMahasiswa);
       setDaftarMataKuliah(data.daftarMataKuliah);
       setDaftarNim(data.daftarNimMahasiswa);
     }
   }, [data]);
 
-  useEffect(() => {
-    console.log(daftarMahasiswa);
-  }, [daftarMahasiswa, daftarMataKuliah]);
+  // useEffect(() => {
+  //   // console.log(daftarMahasiswa);
+  // }, [daftarMahasiswa, daftarMataKuliah]);
 
   function onNimChange(value) {
-    console.log(value);
     props.form.setFieldsValue({
       nama: value
     });
   }
 
   function onNameChange(value) {
-    console.log(value);
     props.form.setFieldsValue({
       nim: value
     });
@@ -63,10 +62,22 @@ function IsiDataNilai(props) {
   function handleSubmit(e) {
     e.preventDefault();
     props.form.validateFieldsAndScroll((err, values) => {
-      const nim = values.nim;
-      const mata_kuliah = values.matkul[0];
+      const id_mahasiswa = values.nim[0];
+      const id_mata_kuliah = values.matkul[0];
+      const nilai = parseInt(values.nilai);
+      const queries = {
+        id_mahasiswa: id_mahasiswa,
+        id_mata_kuliah: id_mata_kuliah,
+        nilai: nilai
+      };
       if (!err) {
-        console.log("Received values of form: ", values);
+        console.log(
+          "Received values of form: ",
+          id_mahasiswa,
+          id_mata_kuliah,
+          nilai
+        );
+        postNilai(queries);
       }
     });
   }
@@ -114,6 +125,6 @@ function IsiDataNilai(props) {
   );
 }
 
-const IrappedisiDataNilai = Form.create({ name: "register" })(IsiDataNilai);
+const FormDataNilai = Form.create({ name: "register" })(IsiDataNilai);
 
-export default IrappedisiDataNilai;
+export default FormDataNilai;

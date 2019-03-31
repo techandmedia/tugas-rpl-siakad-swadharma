@@ -59,15 +59,14 @@ export default function MainLayout(props) {
             {props.children}
           </Content>
         </Layout>
-
         <Footer
           style={{
-            position: "absolute",
+            // position: "absolute",
             lineHeight: 1,
-            bottom: 0,
+            // bottom: 0,
             padding: 10,
-            left: "50%",
-            transform: "translateX(-50%)"
+            marginLeft: "100px",
+            // transform: "translateX(-50%)"
           }}
         >
           <a

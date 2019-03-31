@@ -39,6 +39,10 @@ export default function Header_1(props) {
       name: "Daftar Dosen"
     },
     {
+      id: "isi-data-nilai",
+      name: "Isi Nilai Mahasiswa"
+    },
+    {
       id: "student",
       name: "Daftar Mahasiswa"
     },

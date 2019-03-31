@@ -5,6 +5,8 @@ import Login from "./users/Login";
 import Register from "./users/Register";
 import MahasiswaPage from "./mahasiswa/DaftarMahasiswa/Mahasiswa";
 import StatusMahasiswa from "./mahasiswa/StatusMahasiswa/StatusMahasiswa";
+import Dosen from "./Dosen/Dosen";
+import IsiDataNilai from './admin/IsiDataNilai'
 
 const clientRoute = [
   {
@@ -16,8 +18,16 @@ const clientRoute = [
     component: <Login />
   },
   {
+    route: "/isi-data-nilai",
+    component: <IsiDataNilai />
+  },
+  {
     route: "/register",
     component: <Register />
+  },
+  {
+    route: "/teacher",
+    component: <Dosen />
   },
   {
     route: "/student",

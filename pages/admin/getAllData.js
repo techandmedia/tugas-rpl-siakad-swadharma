@@ -6,12 +6,21 @@ function getAllData() {
   const [mata_kuliah] = useAxios("mata_kuliah");
   const [daftarMahasiswa, setDaftarMahasiswa] = useState([]);
   const [daftarMataKuliah, setDaftarMataKuliah] = useState([]);
+  const [daftarNimMahasiswa, setDaftarNimMahasiswa] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     if (mahasiswa.isLoading === false && mata_kuliah.isLoading === false) {
       // ============== //
-      // re-form Mahasiswa
+      // re-form berdasarkan ID Mahasiswa
+      const tempNim = mahasiswa.data.map(data => ({
+        key: data.id_mahasiswa,
+        value: data.id_mahasiswa,
+        label: data.id_mahasiswa
+      }));
+      setDaftarNimMahasiswa(tempNim);
+
+      // re-form berdasarkan Nama Mahasiswa
       const tempMahasiswa = mahasiswa.data.map(data => ({
         key: data.id_mahasiswa,
         value: data.id_mahasiswa,
@@ -32,7 +41,7 @@ function getAllData() {
   }, [mahasiswa, mata_kuliah]);
 
   if (isLoading === false) {
-    return { daftarMahasiswa, daftarMataKuliah };
+    return { daftarMahasiswa, daftarMataKuliah, daftarNimMahasiswa };
   } else {
     return;
   }

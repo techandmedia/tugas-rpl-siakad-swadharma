@@ -1,37 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Form, Cascader, Input, Button } from "antd";
-import { getDataMahasiswa, getDataMataKuliah } from "./getAllData";
+import getAllData from "./getAllData";
 
 function IsiDataNilai(props) {
-  const { dataMahasiswa, isMahasiswaLoading } = useState(getDataMahasiswa());
-  const dataMataKuliah = getDataMataKuliah();
+  const data = getAllData();
+  const [daftarMahasiswa, setDaftarMahasiswa] = useState([]);
+  const [daftarMataKuliah, setDaftarMataKuliah] = useState([]);
 
-  let a = getDataMahasiswa();
-  console.log(a.dataMahasiswa);
-  // const [daftarMataKuliah, setDaftarMataKuliah] = useState([]);
-  // const [dataMahasiswa, loadMahasiswa] = useAxios("mahasiswa");
-  // const [daftarMahasiswa, setDaftarMahasiswa] = useState([]);
-
-  console.log(dataMahasiswa, isMahasiswaLoading);
   useEffect(() => {
-    console.log(dataMahasiswa);
-    if (dataMahasiswa) {
-      // setDaftarMataKuliah(
-      //   dataMataKuliah.map(data => ({
-      //     key: data.id_mata_kuliah,
-      //     value: data.id_mata_kuliah,
-      //     label: data.nama_mata_kuliah
-      //   }))
-      // );
-      // setDaftarMahasiswa(
-      //   dataMahasiswa.map(data => ({
-      //     key: data.id_mahasiswa,
-      //     value: data.id_mahasiswa,
-      //     label: data.nama_penduduk
-      //   }))
-      // );
+    if (data !== undefined) {
+      console.log(data);
+      setDaftarMahasiswa(data.daftarMahasiswa);
+      setDaftarMataKuliah(data.daftarMataKuliah);
     }
-  }, [dataMahasiswa]);
+  }, [data]);
+
+  useEffect(() => {
+    console.log(daftarMahasiswa);
+  }, [daftarMahasiswa, daftarMataKuliah]);
 
   const { getFieldDecorator } = props.form;
 
@@ -72,9 +58,9 @@ function IsiDataNilai(props) {
   return (
     <React.Fragment>
       <h1 style={{ textAlign: "center" }}>Form ISI Data Nilai Mahasiswa</h1>
-      {/* <Form {...formItemLayout} onSubmit={handleSubmit}> */}
-      {/* Daftar Mahasiswa */}
-      {/* <Form.Item label="Pilih NIM Mahasiswa">
+      <Form {...formItemLayout} onSubmit={handleSubmit}>
+        {/* Daftar Mahasiswa */}
+        <Form.Item label="Pilih NIM Mahasiswa">
           {getFieldDecorator("nim", {})(<Cascader options={daftarMahasiswa} />)}
         </Form.Item>
 
@@ -93,7 +79,7 @@ function IsiDataNilai(props) {
             Register
           </Button>
         </Form.Item>
-      </Form> */}
+      </Form>
     </React.Fragment>
   );
 }

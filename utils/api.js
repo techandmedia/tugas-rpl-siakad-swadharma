@@ -76,7 +76,7 @@ function useAxios(initialApi) {
     setApi(newApi);
   }
 
-  return { ...state, doGetData };
+  return [state];
 }
 
 export default useAxios;
